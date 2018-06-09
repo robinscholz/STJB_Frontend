@@ -2,8 +2,8 @@
   <div class="header">
     <div class="header__top">
       <span class="header__line">
-        <a>{{title}}</a> 
-        <a class="header__address" :href="`https://www.google.com/maps/place/${street}+${postcode}+${city}`" target="_blank" v-html="address"></a></span>
+        <nuxt-link to="/projects">{{title}}</nuxt-link> 
+        <span class="header__address" v-html="address"></span></span>
       <span class="header__line">
         <a :href="`tel:${phone}`">{{phone}}</a> 
         <a :href="`mailto:${email}`">{{email}}</a>
@@ -94,6 +94,8 @@ export default {
     @include fs-m()
     &__line
       display: block
+      a:hover
+        @include underline()
     &__address
       span
         @include comma()
@@ -104,11 +106,10 @@ export default {
       position: absolute
       line-height: 1;
       a
-        @include underline()
         &.fixed
           position: fixed
           top: $mp-a;
-      h2
-        @include underline()
+        &:hover
+          @include underline()
 </style>
 

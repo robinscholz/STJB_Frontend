@@ -1,7 +1,6 @@
 <template>
   <div class="legalnotice">
     <h4 class="legalnotice__headline">Legal Notice</h4>
-    <span>{{title}}</span>
     <p v-html="address"></p>
     <span>{{phone}} {{email}}</span>
     <p class="legalnotice__text" v-html="legalnotice"></p>
@@ -41,7 +40,8 @@ export default {
       return this.information.legalnotice
     },
     address() {
-      let fullAddress = '<span>' + this.street + '</span>'
+      let fullAddress = '<span>' + this.title + '</span> '
+      fullAddress += '<span>' + this.street + '</span>'
       fullAddress += this.postcode.length > 0 && this.city.length > 0 ? '<span class="nobr"> ' + this.postcode + ' ' + this.city  : ''
       fullAddress += this.country.length > 0 ? ' (' + this.country + ')</span>' : '</span>'
 
@@ -56,9 +56,11 @@ export default {
 
   .legalnotice
     max-width: 550px
-    padding: $mp-e 0 0 0
+    padding: $mp-e*1.5 0 0 0
     @include fs-xs()
     &__text
       margin-top: $lh-xs
+      a
+        @include underline()
 
 </style>

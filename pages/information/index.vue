@@ -8,6 +8,7 @@
     <section class="information__footnotes">
       <div v-html="footnotes"></div>
     </section>
+    <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Download PDF</a>
     <LegalNotice :information="information"></LegalNotice>
   </div>
 </template>
@@ -36,6 +37,9 @@ export default {
     },
     footnotes() {
       return this.information.footnotes
+    },
+    pdf() {
+      return this.information.pdf
     }
   }
 }
@@ -45,7 +49,7 @@ export default {
 @import "../../assets/sass/variables.sass"
 
 .information
-  max-width: 1200px
+  max-width: 1100px
   margin-bottom: $mp-a
   &__text
     padding: $mp-e 0 0 0
@@ -59,9 +63,13 @@ export default {
           list-style: none;
           &:before 
             content: '• '
+  &__pdf
+    display: inline-block
+    padding-top: $lh-m*2
   &__footnotes
     div
       p
+        @include fs-s()
         padding-left: $mp-e
 
 </style>
