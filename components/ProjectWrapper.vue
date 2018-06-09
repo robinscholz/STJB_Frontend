@@ -48,8 +48,10 @@ export default {
   .project
     width: 100%
     max-width: 2000px
-    margin: $mp-e*2 0
+    margin: $mp-e 0
     @include fs-s()
+    &:last-child 
+      margin-bottom: $mp-a
     &__img
       width: 100%
       &.small
@@ -57,19 +59,19 @@ export default {
         &.portrait
           max-width: 300px
       &.medium
-        max-width: 800px
+        max-width: 750px
         &.portrait
-          max-width: 400px
+          max-width: 375px
       &.large
         max-width: 100%
       &.thumbs
         width: auto;
-        height: 250px;
+        height: 200px;
         display: inline-block;
         padding: 0 $mp-a 0 0;
 
     &__text
-      margin: $mp-a 0 0 0
+      margin: $mp-a/2 0 0 0
       max-width: 1000px
 
 

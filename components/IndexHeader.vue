@@ -9,15 +9,16 @@
         <a :href="`mailto:${email}`">{{email}}</a>
       </span>
     </div>
-    <div class="header__bottom" ref="information">
+    <div class="header__bottom" ref="information" v-if="$route.name !== 'information'">
       <nuxt-link to="/information" :class="{fixed: stickNavigation}">Information</nuxt-link>
+    </div>
+    <div class="header__bottom underline" v-else-if="$route.name === 'information'">
+      <span>Information</span>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions, mapMutations } from "vuex";
-
 export default {
   name: "IndexHeader",
   data() {
@@ -65,7 +66,7 @@ export default {
     handleScroll() {
       const element = this.$refs.information
       const distance = element.getBoundingClientRect()
-      if(distance.top <= 10) {
+      if(distance.top <= 0) {
         this.stickNavigation = true
       } else {
         this.stickNavigation = false
@@ -87,25 +88,25 @@ export default {
 
   .header
     display: block
-    padding: 0 0 $lh-m*3 0
+    padding: 0 0 36px 0
     &__line
       display: block
 
       a
-        display: inline
+        // display: inline
         :first-child
-        padding-right: $mp-a
+        // padding-right: $mp-a
     &__address
       span
         @include comma()
         :first-child
           white-space: pre-line
     &__bottom
-      margin: $lh-m*2 0 0 0;
+      padding: $mp-b 0 0 0;
       position: absolute
+      line-height: 1;
       a
         &.fixed
           position: fixed
-          top: $mp-a;
-          margin: 0;
+          top: $mp-b;
 </style>
