@@ -103,8 +103,8 @@ export default {
       padding: $mp-a 0 0 0;
       position: absolute
       line-height: 1;
-      @include underline()
       a
+        @include underline()
         &.fixed
           position: fixed
           top: $mp-a;
