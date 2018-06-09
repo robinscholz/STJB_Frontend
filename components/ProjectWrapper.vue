@@ -56,17 +56,17 @@ export default {
       width: 100%
       display: block
       &.small
-        max-width: 600px
+        max-width: 550px
         &.portrait
           max-width: 300px
         &.square
           max-width: 450px
       &.medium
-        max-width: 800px
+        max-width: 750px
         &.portrait
           max-width: 400px
         &.square
-          max-width: 600px
+          max-width: 550px
       &.large
         max-width: 100%
       &.thumbs
@@ -77,7 +77,7 @@ export default {
 
     &__text
       margin: $mp-a/1.5 0 0 0
-      max-width: 1000px
+      max-width: 900px
       a
         @include underline()
 
