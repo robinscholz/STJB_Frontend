@@ -108,4 +108,7 @@ export default {
         &.fixed
           position: fixed
           top: $mp-a;
+      h2
+        @include underline()
 </style>
+
