@@ -5,7 +5,7 @@
         <nuxt-link to="/projects">{{title}}</nuxt-link> 
         <span class="header__address" v-html="address"></span></span>
       <span class="header__line">
-        <a :href="`tel:${phone}`">{{phone}}</a> 
+        <span>{{phone}}</span> 
         <a :href="`mailto:${email}`">{{email}}</a>
       </span>
     </div>

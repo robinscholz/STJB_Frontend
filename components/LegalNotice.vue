@@ -55,11 +55,10 @@ export default {
   @import "../assets/sass/variables.sass"
 
   .legalnotice
-    max-width: 550px
+    max-width: 700px
     padding: $mp-e*1.5 0 0 0
     @include fs-xs()
     &__text
-      margin-top: $lh-xs
       a
         @include underline()
 

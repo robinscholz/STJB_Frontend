@@ -7,8 +7,8 @@
     <InformationClients :clients="clients"></InformationClients>
     <section class="information__footnotes">
       <div v-html="footnotes"></div>
+      <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Download PDF</a>
     </section>
-    <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Download PDF</a>
     <LegalNotice :information="information"></LegalNotice>
   </div>
 </template>
@@ -63,13 +63,12 @@ export default {
           list-style: none;
           &:before 
             content: '• '
+  &__footnotes
+    max-width: 900px
+    @include fs-s()
+    padding-left: $mp-e
   &__pdf
     display: inline-block
-    padding-top: $lh-m*2
-  &__footnotes
-    div
-      p
-        @include fs-s()
-        padding-left: $mp-e
+    padding-top: $lh-s
 
 </style>
