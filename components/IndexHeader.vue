@@ -88,25 +88,20 @@ export default {
 
   .header
     display: block
-    padding: 0 0 36px 0
+    padding: 0 0 26px 0
     &__line
       display: block
-
-      a
-        // display: inline
-        :first-child
-        // padding-right: $mp-a
     &__address
       span
         @include comma()
         :first-child
           white-space: pre-line
     &__bottom
-      padding: $mp-b 0 0 0;
+      padding: $mp-a 0 0 0;
       position: absolute
       line-height: 1;
       a
         &.fixed
           position: fixed
-          top: $mp-b;
+          top: $mp-a;
 </style>
