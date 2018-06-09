@@ -54,6 +54,7 @@ export default {
       margin-bottom: $mp-a
     &__img
       width: 100%
+      display: block
       &.small
         max-width: 600px
         &.portrait
@@ -75,8 +76,10 @@ export default {
         padding: 0 $mp-a 0 0;
 
     &__text
-      margin: $mp-a/2 0 0 0
+      margin: $mp-a/1.5 0 0 0
       max-width: 1000px
+      a
+        @include underline()
 
 
 </style>
