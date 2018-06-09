@@ -58,10 +58,14 @@ export default {
         max-width: 600px
         &.portrait
           max-width: 300px
+        &.square
+          max-width: 450px
       &.medium
-        max-width: 750px
+        max-width: 800px
         &.portrait
-          max-width: 375px
+          max-width: 400px
+        &.square
+          max-width: 600px
       &.large
         max-width: 100%
       &.thumbs
