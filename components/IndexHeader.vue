@@ -65,7 +65,7 @@ export default {
     handleScroll() {
       const element = this.$refs.information
       const distance = element.getBoundingClientRect()
-      if(distance.top <= 0) {
+      if(distance.top <= 10) {
         this.stickNavigation = true
       } else {
         this.stickNavigation = false
@@ -104,7 +104,6 @@ export default {
       margin: $lh-m*2 0 0 0;
       position: absolute
       a
-        background: $white
         &.fixed
           position: fixed
           top: $mp-a;
