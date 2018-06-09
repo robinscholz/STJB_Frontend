@@ -4,7 +4,7 @@
 <script>
 export default {
   fetch ({ params, redirect }) {
-    redirect(301, '/information')
+    redirect(301, '/projects')
   }
 }
 </script>
