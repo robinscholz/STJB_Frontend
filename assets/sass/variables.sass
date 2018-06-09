@@ -7,14 +7,23 @@ $mp-c: 30px
 $mp-d: 40px
 $mp-e: 60px
 
+$lh-xs: 16px
+
+@mixin fs-xs()
+  font-size: 14px
+  line-height: $lh-xs
+
+$lh-s: 19px
+
 @mixin fs-s()
   font-size: 18px
-  line-height: 19px
+  line-height: $lh-s
 
+$lh-m: 21px
 
 @mixin fs-m()
   font-size: 21px
-  line-height: 1
+  line-height: $lh-m
 
 @mixin left()
   text-align: left

@@ -12,8 +12,8 @@
     <div class="header__bottom" ref="information" v-if="$route.name !== 'information'">
       <nuxt-link to="/information" :class="{fixed: stickNavigation}">Information</nuxt-link>
     </div>
-    <div class="header__bottom underline" v-else-if="$route.name === 'information'">
-      <span>Information</span>
+    <div class="header__bottom" v-else-if="$route.name === 'information'">
+      <h2>Information</h2>
     </div>
   </div>
 </template>
@@ -64,14 +64,15 @@ export default {
   },
   methods: {
     handleScroll() {
-      const element = this.$refs.information
-      const distance = element.getBoundingClientRect()
-      if(distance.top <= 0) {
-        this.stickNavigation = true
-      } else {
-        this.stickNavigation = false
+      if(this.$refs.information) {
+        const element = this.$refs.information
+        const distance = element.getBoundingClientRect()
+        if(distance.top <= 0) {
+          this.stickNavigation = true
+        } else {
+          this.stickNavigation = false
+        }
       }
-      console.log("scrolled");
     }
   },
   beforeMount() {
@@ -89,6 +90,8 @@ export default {
   .header
     display: block
     padding: 0 0 26px 0
+    margin: 0 0 $mp-c 0
+    @include fs-m()
     &__line
       display: block
     &__address
@@ -100,6 +103,7 @@ export default {
       padding: $mp-a 0 0 0;
       position: absolute
       line-height: 1;
+      @include underline()
       a
         &.fixed
           position: fixed
