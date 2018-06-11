@@ -11,8 +11,8 @@
     </div>
     <div class="header__bottom" ref="information">
       <nav :class="{fixed: stickNavigation}">
-        <nuxt-link to="/information">Information</nuxt-link>, 
-        <span><span class="strike">Projects</span> Soon …</span>
+        <span>Projects</span>, 
+        <nuxt-link to="/information">Information</nuxt-link>
       </nav>
     </div>
   </div>
