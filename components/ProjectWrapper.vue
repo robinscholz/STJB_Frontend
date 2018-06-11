@@ -51,8 +51,6 @@ export default {
     padding: $mp-e 0 0 0
     display: block;
     @include fs-s()
-    &:last-child 
-      padding-bottom: $mp-a
     &__img
       width: 100%
       display: block

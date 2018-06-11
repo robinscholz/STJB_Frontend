@@ -37,7 +37,11 @@ export default {
       return this.information.email
     },
     legalnotice() {
-      return this.information.legalnotice
+      let legal = this.information.legalnotice
+      legal += `<span>Font customized by <a href='http://fabianharb.ch/'>Fabian Harb</a>, `
+      legal += `website developed by <a href='http://studioscholz.info'>Studio Scholz</a>.</span>`
+
+      return legal
     },
     address() {
       let fullAddress = '<span>' + this.title + '</span> '
@@ -55,8 +59,8 @@ export default {
   @import "../assets/sass/variables.sass"
 
   .legalnotice
-    max-width: 700px
-    padding: $mp-e*1.5 0 0 0
+    max-width: 600px
+    padding: $mp-e*3 0 0 0
     @include fs-xs()
     &__text
       a

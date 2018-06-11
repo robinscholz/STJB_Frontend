@@ -7,8 +7,8 @@
     <InformationClients :clients="clients"></InformationClients>
     <section class="information__footnotes">
       <div v-html="footnotes"></div>
-      <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Download PDF</a>
     </section>
+    <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Profile PDF (download)</a>
     <LegalNotice :information="information"></LegalNotice>
   </div>
 </template>
@@ -50,7 +50,6 @@ export default {
 
 .information
   max-width: 1100px
-  margin-bottom: $mp-a
   &__text
     padding: $mp-e 0 0 0
     div 
@@ -69,6 +68,6 @@ export default {
     padding-left: $mp-e
   &__pdf
     display: inline-block
-    padding-top: $lh-s
+    padding-top: $lh-m
 
 </style>

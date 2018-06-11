@@ -2,18 +2,18 @@
   <div class="header">
     <div class="header__top">
       <span class="header__line">
-        <nuxt-link to="/projects">{{title}}</nuxt-link> 
+        <span>{{title}}</span> 
         <span class="header__address" v-html="address"></span></span>
       <span class="header__line">
         <span>{{phone}}</span> 
         <a :href="`mailto:${email}`">{{email}}</a>
       </span>
     </div>
-    <div class="header__bottom" ref="information" v-if="$route.name !== 'information'">
-      <nuxt-link to="/information" :class="{fixed: stickNavigation}">Information</nuxt-link>
-    </div>
-    <div class="header__bottom" v-else-if="$route.name === 'information'">
-      <h2>Information</h2>
+    <div class="header__bottom" ref="information">
+      <nav :class="{fixed: stickNavigation}">
+        <nuxt-link to="/information">Information</nuxt-link>, 
+        <nuxt-link to="/projects">Projects</nuxt-link>
+      </nav>
     </div>
   </div>
 </template>
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      if(this.$refs.information) {
+      if(this.$refs.information && this.$route.name !== 'information') {
         const element = this.$refs.information
         const distance = element.getBoundingClientRect()
         if(distance.top <= 0) {
@@ -105,11 +105,14 @@ export default {
       padding: $mp-a 0 0 0;
       position: absolute
       line-height: 1;
-      a
+      nav
         &.fixed
           position: fixed
           top: $mp-a;
-        &:hover
-          @include underline()
+        a
+          &:hover
+            @include underline()
+          &.nuxt-link-active
+            @include underline()
 </style>
 
