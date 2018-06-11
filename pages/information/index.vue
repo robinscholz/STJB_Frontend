@@ -9,6 +9,7 @@
       <div v-html="footnotes"></div>
     </section>
     <a class="information__pdf" v-if="pdf.length > 0" :href="pdf" target="_blank">Profile PDF (download)</a>
+    <InformationProject></InformationProject>
     <LegalNotice :information="information"></LegalNotice>
   </div>
 </template>
@@ -17,13 +18,16 @@
 import IndexHeader from '~/components/IndexHeader.vue'
 import InformationClients from '~/components/InformationClients.vue'
 import LegalNotice from '~/components/LegalNotice.vue'
+import InformationProject from '~/components/InformationProject.vue'
+
 
 
 export default {
   components: {
     IndexHeader,
     InformationClients,
-    LegalNotice
+    LegalNotice,
+    InformationProject
   },
   computed: {
     information() {
@@ -79,6 +83,6 @@ export default {
         content: '('counter(step-counter)')'
   &__pdf
     display: inline-block
-    padding-top: $lh-m
+    padding: $lh-m 0 0 0
 
 </style>

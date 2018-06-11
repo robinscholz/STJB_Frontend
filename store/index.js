@@ -12,7 +12,7 @@ const createStore = () => {
     actions: {
       // Fetch API
       async FETCH_API ( { commit }) {
-        await axios.get('https://obscure-oasis-22093.herokuapp.com/api/data').then((response) => {
+        await axios.get('https://cms.studiojohannesbissinger.com/api/data').then((response) => {
           commit('SET_CONTENT', { list: response.data })
         }, (err) => {
           console.log(err)

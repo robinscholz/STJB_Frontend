@@ -12,7 +12,7 @@
     <div class="header__bottom" ref="information">
       <nav :class="{fixed: stickNavigation}">
         <nuxt-link to="/information">Information</nuxt-link>, 
-        <nuxt-link to="/projects">Projects</nuxt-link>
+        <span><span class="strike">Projects</span> Soon …</span>
       </nav>
     </div>
   </div>

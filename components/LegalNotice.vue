@@ -1,9 +1,11 @@
 <template>
-  <div class="legalnotice">
+  <div class="legalnotice" :class="{fixed: showNotice}">
     <h4 class="legalnotice__headline">Legal Notice</h4>
-    <p v-html="address"></p>
-    <span>{{phone}} {{email}}</span>
-    <p class="legalnotice__text" v-html="legalnotice"></p>
+    <template>
+      <p v-html="address"></p>
+      <span>{{phone}} {{email}}</span>
+      <p class="legalnotice__text" v-html="legalnotice"></p>
+    </template>
   </div>
 </template>
 
@@ -11,6 +13,11 @@
 export default {
   name: 'LegalNotice',
   props: ['information'],
+  data() {
+    return {
+      showNotice: false
+    }
+  },
   computed: {
     title() {
       return this.information.title
@@ -38,20 +45,28 @@ export default {
     },
     legalnotice() {
       let legal = this.information.legalnotice
-      legal += `<span>Font tweaked by <a href='http://fabianharb.ch/'>Fabian Harb</a>, `
-      legal += `website developed by <a href='http://studioscholz.info'>Studio Scholz</a>.</span>`
+      legal += `<span>Font cosmetics <a href='http://fabianharb.ch/'>Fabian Harb</a>, `
+      legal += `development <a href='http://studioscholz.info'>Studio Scholz</a>.</span>`
 
       return legal
     },
     address() {
       let fullAddress = '<span>' + this.title + '</span> '
-      fullAddress += '<span>' + this.street + '</span>'
+      fullAddress += '<span>' + this.street + '</span>, '
       fullAddress += this.postcode.length > 0 && this.city.length > 0 ? '<span class="nobr"> ' + this.postcode + ' ' + this.city  : ''
       fullAddress += this.country.length > 0 ? ' (' + this.country + ')</span>' : '</span>'
 
       return fullAddress
     }
-  }
+  },
+  // methods: {
+  //   async showHideNotice () {
+  //     if(process.browser) {
+  //       this.showNotice = await !this.showNotice
+  //       window.scrollTo(0, document.body.scrollHeight + 400)
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -60,8 +75,11 @@ export default {
 
   .legalnotice
     max-width: 600px
-    padding: $mp-e*3 0 0 0
     @include fs-xs()
+    div
+      display: block
+      &.hidden
+        display: none
     &__text
       a
         @include underline()

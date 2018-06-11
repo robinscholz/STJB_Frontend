@@ -87,6 +87,12 @@ $lh-m: 22px
 .underline
   @include underline()
 
+@mixin strike()
+  text-decoration: line-through
+
+.strike
+  @include strike()
+
 @mixin italic()
   font-style: italic
 
