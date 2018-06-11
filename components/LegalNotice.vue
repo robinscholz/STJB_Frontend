@@ -38,7 +38,7 @@ export default {
     },
     legalnotice() {
       let legal = this.information.legalnotice
-      legal += `<span>Font customized by <a href='http://fabianharb.ch/'>Fabian Harb</a>, `
+      legal += `<span>Font tweaked by <a href='http://fabianharb.ch/'>Fabian Harb</a>, `
       legal += `website developed by <a href='http://studioscholz.info'>Studio Scholz</a>.</span>`
 
       return legal

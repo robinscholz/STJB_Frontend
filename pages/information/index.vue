@@ -60,12 +60,23 @@ export default {
         padding-bottom: $lh-m
         li
           list-style: none;
+          display: table-row
           &:before 
-            content: '• '
+            content: '•'
+            display: table-cell
+            padding-right: 8px
   &__footnotes
-    max-width: 900px
+    // max-width: 600px
     @include fs-s()
     padding-left: $mp-e
+    li
+      counter-increment: step-counter
+      list-style: none
+      display: table-row
+      &:before
+        display: table-cell
+        padding-right: 8px
+        content: '('counter(step-counter)')'
   &__pdf
     display: inline-block
     padding-top: $lh-m
