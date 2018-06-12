@@ -109,10 +109,13 @@ export default {
         &.fixed
           position: fixed
           top: $mp-a;
+        span:hover
+          &:before
+            content: "("
+          &:after
+            content: ")"
         a
           &:hover
-            @include underline()
-          &.nuxt-link-active
-            @include underline()
+            text-decoration: none
 </style>
 

@@ -81,4 +81,12 @@ export default {
         @include underline()
 
 
+  @media all and (max-width: 400px)
+    .infoproject
+      &__img
+        &.small
+          &.portrait
+            max-width: none
+
+
 </style>
