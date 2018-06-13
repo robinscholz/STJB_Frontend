@@ -6,7 +6,7 @@
         <span class="header__address" v-html="address"></span></span>
       <span class="header__line">
         <span>{{phone}}</span> 
-        <a :href="`mailto:${email}`">{{email}}</a>
+        <a href="mailto:johannes.bissinger@gmail.com">{{email}}</a>
       </span>
     </div>
     <div class="header__bottom" ref="information">
