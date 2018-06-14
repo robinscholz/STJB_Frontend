@@ -10,6 +10,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Studio Johannes Bissinger' },
+      { name: 'google-site-verification', content: 'eClsqOentMlSORmUiE7ov22qTbGndM3uxW3_R9X87_0' },
       { name: 'msapplication-TileColor', content: '#ffffff' },
       { name: 'msapplication-config', content: '/favicon/browserconfig.xml' },
       { name: 'theme-color', content: '#ffffff' }
