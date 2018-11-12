@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Website for Studio Johannes Bissinger",
   "author": "Studio Scholz <„dev@studioscholz.info“>",
-  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
