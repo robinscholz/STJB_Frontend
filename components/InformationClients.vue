@@ -2,7 +2,10 @@
   <section class="information__clients">
     <h2>Clients</h2>
     <ol>
-      <li class="information__clients__entry" v-for="client in clients">{{client}}</li>
+      <li
+        v-for="client in clients"
+        :key="client"
+        class="information__clients__entry">{{client}}</li>
     </ol>
   </section>
 </template>

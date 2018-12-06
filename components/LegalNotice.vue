@@ -1,11 +1,9 @@
 <template>
   <div class="legalnotice" :class="{fixed: showNotice}">
     <h4 class="legalnotice__headline">Legal Notice</h4>
-    <template>
-      <p v-html="address"></p>
-      <span>{{phone}} {{email}}</span>
-      <p class="legalnotice__text" v-html="legalnotice"></p>
-    </template>
+    <div v-html="address"></div>
+    <span>{{phone}} {{email}}</span>
+    <div class="legalnotice__text" v-html="legalnotice"></div>
   </div>
 </template>
 
