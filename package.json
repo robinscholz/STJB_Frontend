@@ -15,7 +15,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.10",
-    "nuxt-edge": "^2.0.0-25450972.6603046"
+    "nuxt": "^2.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
